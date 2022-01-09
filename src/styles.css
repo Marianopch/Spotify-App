@@ -25,3 +25,12 @@ body{
     font-size: var(--font-size-1);
     color: var(--color-1);
 }
+
+button,
+input{
+    font-family: var(--font-family-1);
+}
+
+button:disabled{
+    opacity: .5;
+}
