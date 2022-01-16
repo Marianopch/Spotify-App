@@ -6,6 +6,7 @@ import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     AuthPageComponent
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ]
 })
 export class AuthModule { }

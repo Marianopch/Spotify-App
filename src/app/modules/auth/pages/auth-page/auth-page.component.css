@@ -13,6 +13,9 @@
 button{
     cursor: pointer;
 }
+.alert{
+    color: red;
+}
 
 .login-auth-page .login-auth-wrapper {
     width: 25%;
