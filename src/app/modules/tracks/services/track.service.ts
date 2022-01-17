@@ -34,7 +34,7 @@ private readonly URL = environment.api;
   getAllRandom$(): Observable<any>{
     return this.httpClient.get(`${this.URL}/tracks`)
     .pipe(
-      mergeMap(({data}: any) => this.skipById(data, 1) ),
+      mergeMap(({data}: any) => this.skipById(data, 2) ),
  
       catchError((err) =>{
         console.log('aca algo paso, revisame!! ', err)
