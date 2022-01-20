@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TrackModel } from '@core/models/tracks.model';
 import { MultimediaService } from '@shared/services/multimedia.service';
@@ -10,29 +11,38 @@ import { Subscription } from 'rxjs';
 })
 export class MediaPlayerComponent implements OnInit, OnDestroy {
 
-  mockCover: TrackModel ={
+  mockCover: TrackModel = {
     cover: "",
-    name:"",
-    album:"",
-    url:"",
+    name: "",
+    album: "",
+    url: "",
     _id: 1
   }
 
   listObservers$: Array<Subscription> = []
 
-  constructor(private multimediaService : MultimediaService) { }
+  constructor(public multimediaService: MultimediaService) { }
 
   ngOnInit(): void {
-    const obsterber1$ : Subscription = this.multimediaService.callback.subscribe(
-      (response:TrackModel) => {
-        console.log("recibiendo cancion:  ", response)
-      }
-    )
-    this.listObservers$ = [obsterber1$]
+
+    // EJEMPLO Subscription!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // const obsterber1$ : Subscription = this.multimediaService.callback.subscribe(
+    //   (response:TrackModel) => {
+    //     console.log("recibiendo cancion:  ", response)
+    //   }
+    // )
+    // this.listObservers$ = [obsterber1$]
+    // --------------------------------------------------------------------------------------------
+
+ 
+ 
+
+
+
   }
 
-    ngOnDestroy(): void {
-      this.listObservers$.forEach(u=> u.unsubscribe())
-        
-    }
+  ngOnDestroy(): void {
+    this.listObservers$.forEach(u=> u.unsubscribe())
+
+  }
 }
